@@ -53,6 +53,7 @@ class KCard extends StatelessWidget {
                       getTitle(),
                     ],
                   ),
+                  const SizedBox(width: 20,),
                   button?? const SizedBox()
                 ],
               ),

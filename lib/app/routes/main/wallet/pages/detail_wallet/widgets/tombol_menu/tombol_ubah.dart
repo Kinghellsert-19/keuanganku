@@ -247,22 +247,24 @@ class TombolMenu {
       backgroundColor: Colors.white,
       isScrollControlled: true,
       builder: (bottomSheetContext){
-        return IntrinsicHeight(
-          child: Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                judul(bottomSheetContext),
-                dummyHeight(),
-                divider,
-                menuUbahNama(bottomSheetContext),
-                divider,
-                menuUbahKategori(bottomSheetContext),
-                divider,
-                menuHapusData(bottomSheetContext),
-                divider,
-              ],
+        return Padding(
+          padding: const EdgeInsets.all(20),
+          child: IntrinsicHeight(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  judul(bottomSheetContext),
+                  dummyHeight(),
+                  divider,
+                  menuUbahNama(bottomSheetContext),
+                  divider,
+                  menuUbahKategori(bottomSheetContext),
+                  divider,
+                  menuHapusData(bottomSheetContext),
+                  divider,
+                ],
+              ),
             ),
           ),
         );

@@ -66,30 +66,28 @@ class KRingkasan extends StatefulWidget {
 class _KRingkasanState extends State<KRingkasan> {
   KWidget totalPemasukan(BuildContext context, double totalPemasukan) {
     double panjangContainerUang = MediaQuery.sizeOf(context).width * 0.4;
-    return Expanded(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "Pemasukan",
-                style: kFontStyle(fontSize: 16, family: "QuickSand_Medium"),
-              ),
-              Container(
-                  alignment: Alignment.centerRight,
-                  width: panjangContainerUang,
-                  child: Text(
-                    formatCurrency(totalPemasukan),
-                    style: kFontStyle(fontSize: 16),
-                    overflow: TextOverflow.ellipsis,
-                  ))
-            ],
-          )
-        ],
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              "Pemasukan",
+              style: kFontStyle(fontSize: 16, family: "QuickSand_Medium"),
+            ),
+            Container(
+                alignment: Alignment.centerRight,
+                width: panjangContainerUang,
+                child: Text(
+                  formatCurrency(totalPemasukan),
+                  style: kFontStyle(fontSize: 16),
+                  overflow: TextOverflow.ellipsis,
+                ))
+          ],
+        )
+      ],
     );
   }
 
@@ -182,7 +180,7 @@ class _KRingkasanState extends State<KRingkasan> {
     return KCard(
       title: "Ringkasan",
       icon: icon,
-      button: dropdownWaktu(context),
+      button: Expanded(child: dropdownWaktu(context)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
